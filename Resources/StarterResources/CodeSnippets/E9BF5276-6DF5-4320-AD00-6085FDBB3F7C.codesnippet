@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>FM - Fetch current user posts</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>let hud = JGProgressHUD(style: .light)
+    FirebaseMagicService.showHud(hud, text: "Fetching user posts...")
+    FirebaseMagic.fetchUserPosts(forUid: FirebaseMagic.currentUserUid(), fetchType: .onUserProfile, in: self, completion: { (result, err) in
+      if let err = err {
+        print("Failed to fetch user posts with err:", err)
+        FirebaseMagicService.dismiss(hud, afterDelay: nil, text: nil)
+        FirebaseMagicService.showAlert(style: .alert, title: "Fetch error", message: "Failed to fetch user posts with err: \(err)")
+        completion(false)
+        return
+      } else if result == false {
+        FirebaseMagicService.dismiss(hud, afterDelay: nil, text: "Could not fetch...")
+        completion(false)
+        return
+      }
+      print("Successfully fetched user posts")
+      FirebaseMagicService.dismiss(hud, afterDelay: nil, text: nil)
+      completion(true)
+    })</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E9BF5276-6DF5-4320-AD00-6085FDBB3F7C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Fetch current user posts</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Firebase Magic</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>FM - Trigger pagination when last item will be displayed on home feed</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>if FirebaseMagic.fetchedPosts.count &gt; FirebaseMagic.paginationElementsLimitPosts - 1 {
+      if indexPath.row == FirebaseMagic.fetchedPosts.count - 1 {
+        fetchPosts { (result) in
+          print("Paginated posts with result:", result)
+        }
+      }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>5AE8CCB3-4CDF-4C60-8721-A34EC2CFFCBD</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Trigger pagination when last item will be displayed on home feed</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Firebase Magic</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

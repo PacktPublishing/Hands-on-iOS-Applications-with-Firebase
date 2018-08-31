@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>FM - Fetch current user</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>guard let uid = FirebaseMagic.currentUserUid() else { return }
+let hud = JGProgressHUD(style: .light)
+    FirebaseMagicService.showHud(hud, text: "Fetching user...")
+    FirebaseMagic.fetchUser(withUid: uid) { (user, err) in
+      if let err = err {
+        FirebaseMagicService.dismiss(hud, afterDelay: nil, text: nil)
+        FirebaseMagicService.showAlert(style: .alert, title: "Error fetching user", message: err.localizedDescription)
+        return
+      }
+      guard let user = user else {
+        FirebaseMagicService.dismiss(hud, afterDelay: nil, text: "Could not fetch...")
+        return
+      }
+      print("Successfully fetched user:", user.username)
+      
+      FirebaseMagicService.dismiss(hud, afterDelay: nil, text: nil)
+      self.userProfileDatasource.user = user
+      self.collectionView?.reloadData()
+      completion(user)
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>8470F2A7-EA14-464C-921A-D52A80DF3F15</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Fetch current user</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Firebase Magic</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

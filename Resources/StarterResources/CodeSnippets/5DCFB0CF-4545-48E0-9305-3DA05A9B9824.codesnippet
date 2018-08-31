@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>FM - Reset password</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>let hud = JGProgressHUD(style: .light)
+FirebaseMagicService.showHud(hud, text: "Sending email...")
+FirebaseMagic.resetPassword(withUsernameOrEmail: usernameOrEmailTextField.text) { (result, err) in
+    if let err = err {
+        FirebaseMagicService.dismiss(hud, afterDelay: nil, text: nil)
+        FirebaseMagicService.showAlert(style: .alert, title: "Reset password error", message: err.localizedDescription)
+        return
+    } else if result == false {
+        FirebaseMagicService.dismiss(hud, afterDelay: nil, text: "Something went wrong...")
+        return
+    }
+    print("Successfully sent email to reset your password.")
+    FirebaseMagicService.dismiss(hud, afterDelay: nil, text: nil)
+    let okAction = UIAlertAction(title: "Ok", style: .cancel, handler: { (action) in
+        self.dismissForgotPasswordController()
+    })
+    FirebaseMagicService.showAlert(style: .alert, title: "Success", message: "Successfully sent email to reset your password", actions: [okAction], completion: nil)
+    
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>5DCFB0CF-4545-48E0-9305-3DA05A9B9824</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Reset password</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Firebase Magic</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

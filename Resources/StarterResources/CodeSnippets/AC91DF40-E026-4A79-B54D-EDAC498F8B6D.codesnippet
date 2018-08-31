@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>FM - Unfollow user</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>FirebaseMagic.handleUnfollowButton(withUserId: user.uid) { (result, err) in
+        if let err = err {
+          print("Failed to unfollow with error:", err)
+        } else if result == false {
+          print("Failed to unfollow.")
+        }
+        if !self.followUnfollowButton.isEnabled {
+          self.setupFollowStyle()
+        }
+      }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>AC91DF40-E026-4A79-B54D-EDAC498F8B6D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Unfollow user</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Firebase Magic</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>FM - Check if user is signed in</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>let hud = JGProgressHUD(style: .light)
+FirebaseMagicService.showHud(hud, text: "Loading...")
+FirebaseMagic.checkIfUserIsSignedIn { (result) in
+    DispatchQueue.main.async {
+        FirebaseMagicService.dismiss(hud, afterDelay: nil, text: nil)
+        if result == false {
+            let controller = SignUpController()
+            let navController = UINavigationController(rootViewController: controller)
+            self.present(navController, animated: false, completion: nil)
+        } else {
+            self.setupViewControllers()
+        }
+    }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E66F22E5-6522-41D1-A917-AFBE870487D2</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Check if user is signed in</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Firabase Magic</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

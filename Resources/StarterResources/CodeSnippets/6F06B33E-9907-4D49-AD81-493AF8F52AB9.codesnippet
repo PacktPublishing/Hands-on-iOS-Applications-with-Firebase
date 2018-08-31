@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>FM - Fetch filtered users with count limit</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>FirebaseMagic.fetchUsers(withUsername: searchText, limitedToFirst: FirebaseMagic.searchUsersFetchLimit) { (users, err) in
+        guard let users = users else { return }
+        self.filteredUsers = users
+        collectionViewController.collectionView?.reloadData()
+      }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>6F06B33E-9907-4D49-AD81-493AF8F52AB9</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Fetch filtered users with count limit</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Firebase Magic</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

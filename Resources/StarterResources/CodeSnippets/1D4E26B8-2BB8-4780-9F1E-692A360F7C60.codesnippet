@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>FM - Log in user with email</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>let hud = JGProgressHUD(style: .light)
+FirebaseMagicService.showHud(hud, text: "Logging in...")
+FirebaseMagic.signIn(withUsernameOrEmail: usernameOrEmailTextField.text, password: passwordTextField.text) { (result, err) in
+    if let err = err {
+        FirebaseMagicService.dismiss(hud, afterDelay: nil, text: nil)
+        FirebaseMagicService.showAlert(style: .alert, title: "Log in error", message: err.localizedDescription)
+        return
+    } else if result == false {
+        FirebaseMagicService.dismiss(hud, afterDelay: nil, text: "Something went wrong...")
+        return
+    }
+    print("Successfully logged.")
+    FirebaseMagicService.dismiss(hud, afterDelay: nil, text: nil)
+    self.dismissLoginController()
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>1D4E26B8-2BB8-4780-9F1E-692A360F7C60</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Log in user with email</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Firebase Magic</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>FM - Sign up user with email</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>let hud = JGProgressHUD(style: .light)
+FirebaseMagicService.showHud(hud, text: "Signing up with email...")
+FirebaseMagic.signUpUserWithEmail(userCredentials: userCredentials, userDetails: userDetails) { (result, err) in
+    if let err = err {
+        FirebaseMagicService.dismiss(hud, afterDelay: nil, text: nil)
+        FirebaseMagicService.showAlert(style: .alert, title: "Sign up error", message: err.localizedDescription)
+        return
+    } else if result == false {
+        FirebaseMagicService.dismiss(hud, afterDelay: nil, text: "Something went wrong...")
+        return
+    }
+    print("Successfully signed up with email.")
+    FirebaseMagicService.dismiss(hud, afterDelay: nil, text: nil)
+    self.dismissSignUpController()
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>51836893-89A4-4EDB-8BC0-25895DFECB91</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Sign up user with email</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Firebase Magic</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

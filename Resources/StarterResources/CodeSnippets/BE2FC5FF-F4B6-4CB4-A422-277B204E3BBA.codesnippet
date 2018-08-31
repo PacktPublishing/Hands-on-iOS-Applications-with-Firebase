@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>FM - Share post</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>let hud = JGProgressHUD(style: .light)
+      FirebaseMagicService.showHud(hud, text: "Sharing...")
+      FirebaseMagic.sharePost(withCaption: caption, image: image) { (result, err) in
+        if let err = err {
+          FirebaseMagicService.dismiss(hud, afterDelay: nil, text: nil)
+          FirebaseMagicService.showAlert(style: .alert, title: "Share error", message: err.localizedDescription)
+          return
+        } else if result == false {
+          FirebaseMagicService.dismiss(hud, afterDelay: nil, text: "Something went wrong...")
+          return
+        }
+        print("Successfully shared post.")
+        FirebaseMagicService.dismiss(hud, afterDelay: nil, text: nil)
+        NotificationCenter.default.post(name: FirebaseMagicService.notificationNameUserSharedAPost, object: nil, userInfo: nil)
+        self.dismiss(animated: true, completion: nil)
+      }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>BE2FC5FF-F4B6-4CB4-A422-277B204E3BBA</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Share post</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Firebase Magic</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
