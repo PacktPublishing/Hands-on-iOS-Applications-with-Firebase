@@ -18,9 +18,6 @@ By the end of the course, you will be able to use Firebase as a Cloud Backend fo
 ### Assumed Knowledge
 To fully benefit from the coverage included in this course, you will need:<br/>
 This course is for iOS developers who want to learn Firebase. If you want to create your own iOS App with Firebase, then this course is for you.
-### Technical Requirements
-This course has the following software requirements:<br/>
- Caffe2
 
 ## Related Products
 * [Firebase for Android Development [Video]](https://www.packtpub.com/application-development/firebase-android-development-video?utm_source=github&utm_medium=repository&utm_campaign=9781789132625)
